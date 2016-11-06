@@ -30,12 +30,14 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
-
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        Hotel hotel = hotelList.get(position);
+        holder.tvJudul.setText(hotel.Judul);
+        holder.tvDeskripsi.setText(hotel.Deskripsi);
+        holder.ivFoto.setImageDrawable(hotel.foto);
     }
 
     @Override
